@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/jp/Benchmark/web/WEB-INF/jsp/Create.jsp</file>
+            <file>file:/D:/jp/Benchmark/src/java/model/dao/TesttableDAO.java</file>
+            <file>file:/D:/jp/Benchmark/src/java/model/pojo/Testtable.java</file>
+            <file>file:/D:/jp/Benchmark/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/D:/jp/Benchmark/src/java/model/pojo/Testtable.hbm.xml</file>
+            <file>file:/D:/jp/Benchmark/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/D:/jp/Benchmark/web/WEB-INF/jsp/testtable.jsp</file>
+            <file>file:/D:/jp/Benchmark/src/java/controller/TesttableController.java</file>
+        </group>
+    </open-files>
+</project-private>

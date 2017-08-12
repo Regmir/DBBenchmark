@@ -29,6 +29,10 @@ public class ActionController {
             TesttableDAO.Insert(number, qt);
         if(query.compareTo("Delete")==0)
             TesttableDAO.Delete(number, qt);
+        if(query.compareTo("Read")==0)
+            TesttableDAO.SelectWithTiming(number, qt);
+        if(query.compareTo("Update")==0)
+            TesttableDAO.Update(number, qt);
         model.addAttribute("Avg",qt.getAverage());
         model.addAttribute("Max",qt.getMax());
         model.addAttribute("Min",qt.getMin());

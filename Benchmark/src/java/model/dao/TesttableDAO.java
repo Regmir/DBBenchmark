@@ -28,28 +28,67 @@ public class TesttableDAO {
         session.close();
         return list;
     }
-        
-    public static void Update(short id, String newdata){
-        /*Session session;
+    
+    public static void SelectWithTiming(Integer number, QueryTime qt){
+        Session session;
         session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        String hql = "UPDATE Testtable set randomdata = :newdata "  + 
-        "WHERE id = :newid";
-        Query query = session.createQuery(hql);
-        query.setParameter("newdata", newdata);
-        query.setParameter("newid", id);
-        query.executeUpdate();
-        session.getTransaction().commit();
-        session.close();*/
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        Testtable newobj = new Testtable();
-        newobj.setRandomdata(newdata);
-        newobj.setId(id);
-        session.update(newobj);
-        session.getTransaction().commit();
+        String hql = "FROM Testtable";       
+        long st = System.nanoTime();
+            session.createQuery(hql);            
+        long end = System.nanoTime();
+        qt.setMax(end-st);
+        qt.setMin(end-st);
+        long total=end-st;
+        for (int i=1;i<=number;i++){
+            st = System.nanoTime();
+                session.createQuery(hql); 
+            end = System.nanoTime();
+            if(end-st<qt.getMin()) qt.setMin(end-st);
+            if(end-st>qt.getMax()) qt.setMax(end-st);
+            total+=end-st;
+        }
+        qt.setAverage(total/number);
+        qt.setTotal(total);
         session.close();
     }
+        
+    public static void Update(Integer number, QueryTime qt){
+        List<Testtable> list=Select();
+        int maxid=list.size();
+        QueryTime fillerQt=new QueryTime();
+        if(number>maxid)
+            Insert(number-maxid,fillerQt);
+        list=Select();
+        maxid=list.get(list.size()-1).getId();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Testtable updobj = new Testtable();
+        updobj.setId((short)maxid);
+        updobj.setRandomdata("NewRD");
+        long st = System.nanoTime();
+            session.update(updobj);
+        long end = System.nanoTime();
+        long total=end-st;
+        qt.setMax(end-st);
+        qt.setMin(end-st);
+        for (int i=1;i<number;i++){
+            maxid=list.get(list.size()-1-i).getId();
+            updobj = new Testtable();
+            updobj.setId((short)maxid);
+            updobj.setRandomdata("NewRD");
+            st = System.nanoTime();
+                session.update(updobj);
+            end = System.nanoTime();
+            if(end-st<qt.getMin()) qt.setMin(end-st);
+            if(end-st>qt.getMax()) qt.setMax(end-st);
+            total+=end-st;
+        }
+        qt.setAverage(total/number);
+        qt.setTotal(total);
+        session.getTransaction().commit();
+        session.close();
+    }       
+    
         
     public static void Insert(Integer number, QueryTime qt) 
     {
@@ -108,7 +147,6 @@ public class TesttableDAO {
             if(end-st<qt.getMin()) qt.setMin(end-st);
             if(end-st>qt.getMax()) qt.setMax(end-st);
             total+=end-st;
-            //maxid=list.get(list.size()-i-2).getId();
         }
         qt.setAverage(total/number);
         qt.setTotal(total);

@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Data List</h1>
-        <table>
+        <table border="1">
             <tr>
                 <th>ID</th><th>Data</th>
             </tr>

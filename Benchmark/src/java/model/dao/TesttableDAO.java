@@ -63,7 +63,7 @@ public class TesttableDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Testtable updobj = new Testtable();
-        updobj.setId((short)maxid);
+        updobj.setId(maxid);
         updobj.setRandomdata("NewRD");
         long st = System.nanoTime();
             session.update(updobj);
@@ -74,7 +74,7 @@ public class TesttableDAO {
         for (int i=1;i<number;i++){
             maxid=list.get(list.size()-1-i).getId();
             updobj = new Testtable();
-            updobj.setId((short)maxid);
+            updobj.setId(maxid);
             updobj.setRandomdata("NewRD");
             st = System.nanoTime();
                 session.update(updobj);
@@ -130,7 +130,7 @@ public class TesttableDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Testtable delobj = new Testtable();
-        delobj.setId((short)maxid);
+        delobj.setId(maxid);
         long st = System.nanoTime();
             session.delete(delobj);
         long end = System.nanoTime();
@@ -140,7 +140,7 @@ public class TesttableDAO {
         for (int i=1;i<number;i++){
             maxid=list.get(list.size()-1-i).getId();
             delobj = new Testtable();
-            delobj.setId((short)maxid);
+            delobj.setId(maxid);
             st = System.nanoTime();
                 session.delete(delobj);
             end = System.nanoTime();

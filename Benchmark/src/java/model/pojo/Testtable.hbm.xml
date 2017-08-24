@@ -4,7 +4,7 @@
 <!-- Generated 30.07.2017 14:39:44 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping auto-import="true">
     <class name="model.pojo.Testtable" table="testtable" schema="public" optimistic-lock="version">
-        <id name="id" type="short">
+        <id name="id" type="integer">
             <column name="id" />
             <generator class="increment"/>
         </id>

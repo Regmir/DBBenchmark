@@ -8,26 +8,26 @@ package model.pojo;
  */
 public class Testtable  implements java.io.Serializable {
 
-     private short id;
+     private int id;
      private String randomdata;
 
     public Testtable() {
     }
 
 	
-    public Testtable(short id) {
+    public Testtable(int id) {
         this.id = id;
     }
-    public Testtable(short id, String randomdata) {
+    public Testtable(int id, String randomdata) {
        this.id = id;
        this.randomdata = randomdata;
     }
    
-    public short getId() {
+    public int getId() {
         return this.id;
     }
     
-    public void setId(short id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getRandomdata() {

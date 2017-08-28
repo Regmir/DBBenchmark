@@ -25,12 +25,13 @@ public class ActionController {
 
     public String showMessage(@RequestParam String query, @RequestParam Integer number, ModelMap model) {
         QueryTime qt=new QueryTime();
+        if ((number<=0)||(number>=200001)) qt.setTotal(0); else
         if(query.compareTo("Create")==0)
-            TesttableDAO.Insert(number, qt);
+            TesttableDAO.Insert(number, qt);else
         if(query.compareTo("Delete")==0)
-            TesttableDAO.Delete(number, qt);
+            TesttableDAO.Delete(number, qt);else
         if(query.compareTo("Read")==0)
-            TesttableDAO.SelectWithTiming(number, qt);
+            TesttableDAO.SelectWithTiming(number, qt);else
         if(query.compareTo("Update")==0)
             TesttableDAO.Update(number, qt);
         model.addAttribute("Avg",qt.getAverage());

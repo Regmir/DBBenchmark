@@ -91,10 +91,21 @@ public class TesttableDAO {
     
         
     public static void Insert(Integer number, QueryTime qt) 
-    {
+    {   
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Integer maxid=Select().size();
+        List<Testtable> list1=Select();
+        if(number+maxid>200001){
+            Testtable delobj = new Testtable();
+            delobj.setId(maxid);
+            for (int i=0;i<maxid;i++){
+                maxid=list1.get(list1.size()-1-i).getId();
+                delobj = new Testtable();
+                delobj.setId(maxid);
+                session.delete(delobj);
+            }
+        }
         Testtable newobj = new Testtable();
         newobj.setRandomdata("RD"+maxid.toString());
         long st = System.nanoTime();

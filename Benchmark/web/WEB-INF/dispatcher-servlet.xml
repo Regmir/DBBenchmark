@@ -13,6 +13,7 @@
     <bean class="controller.TesttableController" id="testtableController"/>
     <bean class="controller.MenuController" id="menuController"/>
     <bean class="controller.ActionController" id="actionController"/>
+    <bean class="controller.HistoryController" id="historyController"/>
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
@@ -25,6 +26,7 @@
                 <prop key="Data.htm">testtableController</prop>
                 <prop key="Menu.htm">menuController</prop>
                 <prop key="Action.htm">actionController</prop>
+                <prop key="History.htm">historyController</prop>
             </props>
         </property>
     </bean>

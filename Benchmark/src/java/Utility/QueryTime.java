@@ -10,40 +10,42 @@ package Utility;
  * @author Acer
  */
 public class QueryTime {
-    private long average;
-    private long max;
-    private long min;
-    private long total;
+    private double average;
+    private double max;
+    private double min;
+    private double total;
 
-    public long getAverage() {
+    public double getAverage() {
         return average;
     }
 
-    public void setAverage(long average) {
+    public void setAverage(double average) {
         this.average = average;
     }
 
-    public long getMax() {
+    public double getMax() {
         return max;
     }
 
-    public void setMax(long max) {
+    public void setMax(double max) {
         this.max = max;
     }
 
-    public long getMin() {
+    public double getMin() {
         return min;
     }
 
-    public void setMin(long min) {
+    public void setMin(double min) {
         this.min = min;
     }
 
-    public long getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(long total) {
+    public void setTotal(double total) {
         this.total = total;
     }
+    
+ 
 }

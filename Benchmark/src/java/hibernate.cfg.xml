@@ -47,5 +47,6 @@ Contributor(s):
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">admin</property>
     <mapping resource="model/pojo/Testtable.hbm.xml"/>
+    <mapping resource="model/pojo/History.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

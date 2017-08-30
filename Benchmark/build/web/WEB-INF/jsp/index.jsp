@@ -43,6 +43,7 @@
     <body>
         <a href="Data.htm">Data List</a>
         <a href="Menu.htm">Menu</a>
+        <a href="History.htm">History</a>
     </body>
 
 

@@ -46,7 +46,7 @@
 	</div>
 	<div>
         <h4>Number</h4>
-        <input type="number" id="num" name="number"/>
+        <input type="number" min="1" max="200000" value="1" id="num" name="number"/>
 	</div>
         <div>
 	    <input type="submit" value="Start Test">

@@ -34,10 +34,10 @@ public class ActionController {
             TesttableDAO.SelectWithTiming(number, qt);else
         if(query.compareTo("Update")==0)
             TesttableDAO.Update(number, qt);
-        model.addAttribute("Avg",qt.getAverage());
-        model.addAttribute("Max",qt.getMax());
-        model.addAttribute("Min",qt.getMin());
-        model.addAttribute("Total",qt.getTotal());
+        model.addAttribute("Avg",qt.getAverage()/1000);
+        model.addAttribute("Max",qt.getMax()/1000);
+        model.addAttribute("Min",qt.getMin()/1000);
+        model.addAttribute("Total",qt.getTotal()/1000);
         model.addAttribute(QUERY_TYPE, query);
         model.addAttribute(QUERY_NUMBER, number);       
         return PAGE;

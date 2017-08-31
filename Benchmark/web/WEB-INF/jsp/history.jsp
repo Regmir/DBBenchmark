@@ -49,7 +49,7 @@
                         <c:out value="${data.getCustomQuery()}"></c:out>
                     </td>
                     <td>
-                        <c:out value="${data.getUser()}"></c:out>
+                        <c:out value="${data.getDbusername()}"></c:out>
                     </td>
                 </tr>
             </c:forEach>

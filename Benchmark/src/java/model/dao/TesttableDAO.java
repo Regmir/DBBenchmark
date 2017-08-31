@@ -9,7 +9,6 @@ import Utility.QueryTime;
 import java.util.List;
 import model.pojo.Testtable;
 import model.util.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 

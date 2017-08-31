@@ -21,7 +21,7 @@ public class History implements java.io.Serializable {
     private double Total;
     private Date Date;
     private String CustomQuery;
-    private String User;
+    private String Dbusername;
 
     public int getID() {
         return ID;
@@ -95,12 +95,12 @@ public class History implements java.io.Serializable {
         this.CustomQuery = CustomQuery;
     }
 
-    public String getUser() {
-        return User;
+    public String getDbusername() {
+        return Dbusername;
     }
 
-    public void setUser(String User) {
-        this.User = User;
+    public void setDbusername(String Dbusername) {
+        this.Dbusername = Dbusername;
     }
     
 }

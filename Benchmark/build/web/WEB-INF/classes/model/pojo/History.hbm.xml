@@ -32,8 +32,8 @@
         <property name="CustomQuery" type="string">
             <column name="CustomQuery" length="1000"/>
         </property>
-        <property name="User" type="string">
-            <column name="User" length="100"/>
+        <property name="Dbusername" type="string">
+            <column name="Dbusername" length="100"/>
         </property>
     </class>
 </hibernate-mapping>

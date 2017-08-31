@@ -7,6 +7,12 @@ package controller;
 
 
 import Utility.QueryTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import static java.time.temporal.TemporalQueries.localDate;
+import java.util.Calendar;
+import java.util.Date;
+import model.dao.HistoryDAO;
 import model.dao.TesttableDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,19 +31,36 @@ public class ActionController {
 
     public String showMessage(@RequestParam String query, @RequestParam Integer number, ModelMap model) {
         QueryTime qt=new QueryTime();
-        if ((number<=0)||(number>=200001)) qt.setTotal(0); else
-        if(query.compareTo("Create")==0)
-            TesttableDAO.Insert(number, qt);else
-        if(query.compareTo("Delete")==0)
-            TesttableDAO.Delete(number, qt);else
-        if(query.compareTo("Read")==0)
-            TesttableDAO.SelectWithTiming(number, qt);else
-        if(query.compareTo("Update")==0)
+        String qtype="None";
+        if ((number<=0)||(number>=200001)) {
+            qt.setTotal(0);          
+        } else
+        if(query.compareTo("Create")==0){
+            TesttableDAO.Insert(number, qt);
+            qtype="Create";
+        } else
+        if(query.compareTo("Delete")==0){
+            TesttableDAO.Delete(number, qt);
+            qtype="Delete";
+        } else
+        if(query.compareTo("Read")==0){
+            TesttableDAO.SelectWithTiming(number, qt);
+            qtype="Read";
+        } else
+        if(query.compareTo("Update")==0){
             TesttableDAO.Update(number, qt);
-        model.addAttribute("Avg",qt.getAverage()/1000);
-        model.addAttribute("Max",qt.getMax()/1000);
-        model.addAttribute("Min",qt.getMin()/1000);
-        model.addAttribute("Total",qt.getTotal()/1000);
+            qtype="Update";
+        }
+        String user="User";
+        Date date = new Date();
+        if(qt.getTotal()!=0)
+        HistoryDAO.Insert(qtype, number, qt.getAverage()/1000000, 
+                qt.getMin()/1000000, qt.getMax()/1000000,
+                qt.getTotal()/1000000, date, "-", user);
+        model.addAttribute("Avg",qt.getAverage()/1000000);
+        model.addAttribute("Max",qt.getMax()/1000000);
+        model.addAttribute("Min",qt.getMin()/1000000);
+        model.addAttribute("Total",qt.getTotal()/1000000);
         model.addAttribute(QUERY_TYPE, query);
         model.addAttribute(QUERY_NUMBER, number);       
         return PAGE;

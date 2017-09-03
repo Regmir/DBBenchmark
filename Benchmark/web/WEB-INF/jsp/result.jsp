@@ -32,6 +32,7 @@ Total: ${Total}-->
                 <th>Type</th><th>Number</th>
                 <th>Avg</th><th>Min</th>
                 <th>Max</th><th>Total</th>
+                <th>Error</th>
             </tr>
                 <tr>
                     <td>${query}</td>
@@ -40,6 +41,7 @@ Total: ${Total}-->
                     <td>${Min}</td>
                     <td>${Max}</td>
                     <td>${Total}</td>
+                    <td>${error}</td>
                 </tr>
 </table>
 <br/>

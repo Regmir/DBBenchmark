@@ -42,11 +42,19 @@
             <input type="radio" name="query" value="Delete" id="cd-radio-4">
             <label for="cd-radio-4">Delete</label>
 	</li>
+        <li>
+            <input type="radio" name="query" value="Custom" id="cd-radio-5">
+            <label for="cd-radio-5">Custom</label>
+	</li>
 	</ul>
 	</div>
 	<div>
         <h4>Number</h4>
         <input type="number" min="1" max="200000" value="1" id="num" name="number"/>
+	</div>
+        <div>
+        <h4>Custom Query</h4>
+        <input type="text" value="insert custom query here" id="custom" name="custom"/>
 	</div>
         <div>
 	    <input type="submit" value="Start Test">

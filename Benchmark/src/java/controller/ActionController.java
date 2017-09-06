@@ -7,6 +7,7 @@ package controller;
 
 
 import Utility.QueryTime;
+import Utility.UserStorage;
 import java.sql.SQLException;
 import java.util.Date;
 import model.dao.DirectConnectionDAO;
@@ -69,7 +70,7 @@ public class ActionController {
             }
             qtype="Custom";
         }
-        String user="User";
+        String user=UserStorage.getUser();
         Date date = new Date();
         if(qt.getTotal()!=0)
         HistoryDAO.Insert(qtype, number, qt.getAverage()/1000000, 

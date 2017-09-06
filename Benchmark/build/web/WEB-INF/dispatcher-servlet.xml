@@ -14,6 +14,12 @@
     <bean class="controller.MenuController" id="menuController"/>
     <bean class="controller.ActionController" id="actionController"/>
     <bean class="controller.HistoryController" id="historyController"/>
+    <bean class="controller.LoginController" id="loginController"/>
+    <bean class="controller.RegisterController" id="registerController"/>
+    <bean class="controller.ExecuteRegister" id="executeRegister"/>
+    <bean class="controller.ExecuteLogin" id="executeLogin"/>
+    <bean class="controller.UsersController" id="usersController"/>
+    <bean class="controller.AdminCheck" id="adminCheck"/>
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
@@ -22,11 +28,16 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
+                <prop key="index.htm">adminCheck</prop>
                 <prop key="Data.htm">testtableController</prop>
                 <prop key="Menu.htm">menuController</prop>
                 <prop key="Action.htm">actionController</prop>
                 <prop key="History.htm">historyController</prop>
+                <prop key="Login.htm">loginController</prop>
+                <prop key="Register.htm">registerController</prop>
+                <prop key="Reg.htm">executeRegister</prop>
+                <prop key="Log.htm">executeLogin</prop>
+                <prop key="Users.htm">usersController</prop>
             </props>
         </property>
     </bean>

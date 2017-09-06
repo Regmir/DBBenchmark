@@ -5,6 +5,7 @@
  */
 package model.dao;
 
+import Utility.UserStorage;
 import java.util.Date;
 import java.util.List;
 import model.pojo.History;
@@ -21,8 +22,15 @@ public class HistoryDAO {
         List<History> list = null;
         Session session;
         session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "FROM History";
-        Query query = session.createQuery(hql);
+        Query query=null;
+        if(UserStorage.getLevel()==0){
+            String hql = "FROM History where Dbusername = :paramName";
+            query = session.createQuery(hql);
+            query.setParameter("paramName", UserStorage.getUser());     
+        } else{
+            String hql = "FROM History";
+            query = session.createQuery(hql);
+        }
         list = query.list();
         session.close();
         return list;
@@ -43,7 +51,6 @@ public class HistoryDAO {
         newobj.setDate(date);
         newobj.setCustomQuery(custq);
         newobj.setDbusername(user);
-        newobj.setID(10);
         session.save(newobj);
         session.getTransaction().commit();
         session.close();

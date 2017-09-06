@@ -10,11 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-public class MenuController implements Controller{
+/**
+ *
+ * @author Acer
+ */
+public class LoginController implements Controller{
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
-        ModelAndView mv = new ModelAndView("menu");
+        ModelAndView mv = new ModelAndView("loginscreen");
+        //List<Testtable> list = TesttableDAO.Select();
+        //TesttableDAO.Update((short)2, "RD");
+        //TesttableDAO.Insert();
+        //TesttableDAO.Delete((short)19);
+        //mv.addObject("data",list);
         return mv;
     }
     

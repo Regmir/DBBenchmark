@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30.07.2017 14:39:44 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping auto-import="true">
+  <class name="model.pojo.Usersstorage" table="usersstorage" schema="public" optimistic-lock="version">
+    <id name="ID" type="integer">
+      <column name="ID"/>
+      <generator class="increment"/>
+    </id>
+    <property name="DBUserName" type="string">
+      <column length="100" name="DBUserName"/>
+    </property>
+    <property name="DBUserPas" type="string">
+      <column length="100" name="DBUserPas"/>
+    </property>
+    <property name="DBUserEmail" type="string">
+      <column length="100" name="DBUserEmail"/>
+    </property>
+    <property name="AccessLevel" type="integer">
+      <column name="AccessLevel"/>
+    </property>
+  </class>
+</hibernate-mapping>

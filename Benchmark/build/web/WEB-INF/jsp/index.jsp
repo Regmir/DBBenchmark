@@ -44,6 +44,8 @@
         <a href="Data.htm">Data List</a>
         <a href="Menu.htm">Menu</a>
         <a href="History.htm">History</a>
+        <br>
+        <a href="Login.htm">LogOut</a>
     </body>
 
 

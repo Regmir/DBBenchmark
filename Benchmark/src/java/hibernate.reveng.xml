@@ -44,4 +44,6 @@ Contributor(s):
   <table-filter match-name="testtable"/>
   <schema-selection match-catalog="postgres" match-schema="public"/>
   <table-filter match-name="History"/>
+  <schema-selection match-catalog="postgres" match-schema="public"/>
+  <table-filter match-name="usersstorage"/>
 </hibernate-reverse-engineering>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : history
-    Created on : 30.08.2017, 14:24:43
+    Document   : users
+    Created on : 06.09.2017, 15:27:05
     Author     : Acer
 --%>
 
@@ -10,46 +10,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Table Data</title>
+        <title>Users</title>
     </head>
             <header>
-        <h1>History</h1>
+        <h1>Users</h1>
         </header>
     <body>      
         <table>
             <tr>
-                <th>Type</th><th>Number</th><th>Avg, MilSec</th><th>Min, MilSec</th>
-                <th>Max, MilSec</th><th>Total, MilSec</th><th>Date</th><th>Custom Query</th>
-                <th>User</th>
+                <th>Login</th><th>Email</th><th>Level</th>
             </tr>
             <c:forEach var="data" items="${data}">
                 <tr>
                     <td>
-                        <c:out value="${data.getType()}"></c:out>
+                        <c:out value="${data.getDBUserName()}"></c:out>
                     </td>
                     <td>
-                        <c:out value="${data.getNumber()}"></c:out>
+                        <c:out value="${data.getDBUserEmail()}"></c:out>
                     </td>
                     <td>
-                        <c:out value="${data.getAvg()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getMin()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getMax()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getTotal()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getDate()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getCustomQuery()}"></c:out>
-                    </td>
-                    <td>
-                        <c:out value="${data.getDbusername()}"></c:out>
+                        <c:out value="${data.getAccessLevel()}"></c:out>
                     </td>
                 </tr>
             </c:forEach>

@@ -30,8 +30,8 @@ Total: ${Total}-->
 <table>
             <tr>
                 <th>Type</th><th>Number</th>
-                <th>Avg</th><th>Min</th>
-                <th>Max</th><th>Total</th>
+                <th>Avg, MilSec</th><th>Min, MilSec</th>
+                <th>Max, MilSec</th><th>Total, MilSec</th>
                 <th>Error</th>
             </tr>
                 <tr>

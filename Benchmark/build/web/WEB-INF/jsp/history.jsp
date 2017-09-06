@@ -18,8 +18,8 @@
     <body>      
         <table>
             <tr>
-                <th>Type</th><th>Number</th><th>Avg</th><th>Min</th>
-                <th>Max</th><th>Total</th><th>Date</th><th>Custom Query</th>
+                <th>Type</th><th>Number</th><th>Avg, MilSec</th><th>Min, MilSec</th>
+                <th>Max, MilSec</th><th>Total, MilSec</th><th>Date</th><th>Custom Query</th>
                 <th>User</th>
             </tr>
             <c:forEach var="data" items="${data}">
